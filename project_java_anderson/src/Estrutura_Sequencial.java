@@ -6,7 +6,8 @@ public class Estrutura_Sequencial {
 		// TODO Auto-generated method stub
 //		exe01();
 //		exe02();
-		exe03();
+//		exe03();
+		exe04();
 	}
 	public static void exe01() {
 		int number1, number2;
@@ -44,4 +45,18 @@ public class Estrutura_Sequencial {
 		System.out.print("DIFERENCA = " + diferenca);
 	}
 
+	public static void exe04() {
+		int numerofuncionario;
+		double	horasTrabalhadas,
+				porHora, salario;
+		
+		Scanner scan = new Scanner(System.in);
+		numerofuncionario = scan.nextInt();
+		horasTrabalhadas = scan.nextDouble();
+		porHora = scan.nextDouble();
+		scan.close();
+		salario = horasTrabalhadas * porHora;
+		System.out.println("NUMBER = "+numerofuncionario);
+		System.out.printf("SALARY = U$ %.2f",salario);
+	}
 }
