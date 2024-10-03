@@ -7,7 +7,8 @@ public class Estrutura_Sequencial {
 //		exe01();
 //		exe02();
 //		exe03();
-		exe04();
+//		exe04();
+		exe05();
 	}
 	public static void exe01() {
 		int number1, number2;
@@ -58,5 +59,23 @@ public class Estrutura_Sequencial {
 		salario = horasTrabalhadas * porHora;
 		System.out.println("NUMBER = "+numerofuncionario);
 		System.out.printf("SALARY = U$ %.2f",salario);
+	}
+	
+	public static void exe05() {
+		int pecaCodigo1, pecaQuantidade1,
+			pecaCodigo2, pecaQuantidade2;
+		double pecaUnit1, pecaUnit2, valorAPagar;
+		
+		Scanner scan = new Scanner(System.in);
+		pecaCodigo1 = scan.nextInt();
+		pecaQuantidade1 = scan.nextInt();
+		pecaUnit1 = scan.nextDouble();
+		pecaCodigo2 = scan.nextInt();
+		pecaQuantidade2 = scan.nextInt();
+		pecaUnit2 = scan.nextDouble();
+		scan.close();
+		valorAPagar = (pecaQuantidade1 * pecaUnit1) +
+					(pecaQuantidade2 * pecaUnit2);
+		System.out.printf("VALOR A PAGAR: R$ %.2f", valorAPagar);
 	}
 }
