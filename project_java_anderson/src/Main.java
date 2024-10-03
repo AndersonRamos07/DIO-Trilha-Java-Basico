@@ -7,8 +7,8 @@ public class Main {
 		System.out.println("Hello World!");
 		System.out.printf("%.2f%n", x);
 		
-		Exercicio1 exercicio = new Exercicio1();
-		exercicio.main(null);
+//		Exercicio1 exercicio = new Exercicio1();
+//		exercicio.main(null);
 	}
 
 }
