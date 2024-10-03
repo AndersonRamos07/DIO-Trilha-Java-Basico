@@ -8,7 +8,8 @@ public class Estrutura_Sequencial {
 //		exe02();
 //		exe03();
 //		exe04();
-		exe05();
+//		exe05();
+		exe06();
 	}
 	public static void exe01() {
 		int number1, number2;
@@ -29,6 +30,7 @@ public class Estrutura_Sequencial {
 	
 		Scanner scan = new Scanner(System.in);
 		raio = scan.nextDouble();
+		scan.close();
 		result = pi * Math.pow(raio, 2);
 		System.out.printf("A = %.4f",result);
 	}
@@ -77,5 +79,24 @@ public class Estrutura_Sequencial {
 		valorAPagar = (pecaQuantidade1 * pecaUnit1) +
 					(pecaQuantidade2 * pecaUnit2);
 		System.out.printf("VALOR A PAGAR: R$ %.2f", valorAPagar);
+	}
+	public static void exe06() {
+		double A, B, C, result;
+		
+		Scanner scan = new Scanner(System.in);
+		A = scan.nextDouble();
+		B = scan.nextDouble();
+		C = scan.nextDouble();
+		scan.close();
+		result = (Math.pow(A, 2)*(Math.pow(C, 2))/2);
+		System.out.printf("TRIANGULO: %.3f%n", result);
+		result = 3.14159 * Math.pow(C, 2);
+		System.out.printf("CIRCULO: %.3f%n", result);
+		result = ((A + B)*C)/2;
+		System.out.printf("TRAPEZIO: %.3f%n", result);
+		result = Math.pow(B, 2);
+		System.out.printf("QUADRADO: %.3f%n", result);
+		result = A * B;
+		System.out.printf("RETANGULO: %.3f%n", result);
 	}
 }
