@@ -2,16 +2,18 @@ import java.util.Scanner;
 
 public class hcf150 {
 	public static void main(String[] args) {
-		boolean feito;
-//		enum servicos { trocaDeOleo , reposicaoDeOleo , combustivel };
 		int doisMilEDez,
+			kmRestantes,
 			resposta,
 			velocimetro;
 		String ultimoServico = "";
+		String[] servicos = {"a troca do oleo",
+							"a reposicao do oleo",
+							"o abastecimento"};
 		
 		doisMilEDez = 0;
+		kmRestantes = 0;
 		velocimetro = 0;
-		feito = false;
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -21,20 +23,34 @@ public class hcf150 {
 			switch(resposta)
 			{
 				case 0:
-					showMenu(); break;
+					break;
 				case 1:
 					velocimetro += addKm();
 				case 2:
-					showMarcador(velocimetro); break;
+					showMarcador(velocimetro);
+					break;
 				case 3:
-					inputServico(ultimoServico); break;					
+					ultimoServico = inputServico(ultimoServico, velocimetro);
+					kmRestantes = addKmServico(velocimetro);
+					break;
+				case 4:
+					showMe(ultimoServico);
+					System.out.println(kmRestantes);
+					break;
+				case 7:
+					System.out.print(doisMilEDez);
+//				default:
+//					showMenu();
 			}
 			++doisMilEDez;
+			checarKm(velocimetro, kmRestantes, ultimoServico, servicos);
+			showMenu();
 		}
 		while(doisMilEDez < 2010);
 
 		return;
 	}
+
 	public static int addKm ()
 	{
 		int km;
@@ -44,10 +60,10 @@ public class hcf150 {
 		
 		do
 		{
-			System.out.println("Quantos km hoje?");
+			System.out.printf("Quantos km hoje?%n_");
 			km = scanKm.nextInt();
 			System.out.printf("%dkm, confirma?%n"
-					+ "S - sim, N - nao", km);
+					+ "S - sim, N - nao%n_", km);
 			resposta = scanKm.next().charAt(0);
 			if(resposta == 'S' || resposta == 's')
 			{
@@ -58,33 +74,35 @@ public class hcf150 {
 	}
 	public static void showMe(String variavel)
 	{
-		System.out.print(variavel);
+		System.out.printf("%s%n_",variavel);
 	}
 	public static void showMenu()
 	{
-		System.out.printf("Menu:%n"
+		System.out.printf("%n-------%n"
+				+ "Menu:%n"
 				+ "-1)inserir novo km:%n"
 				+ "-2)verificar quantos km:%n"
-				+ "-3)adicionar servico realizado:");
+				+ "-3)adicionar servico realizado:%n"
+				+ "-4)verificar ultimo servico:%n"
+				+ "_");
 	}
 	public static void showMarcador (int marcador)
 	{
-		System.out.printf("Velocimetro em: %dkm%n", marcador);
+		System.out.printf("[ Velocimetro em: %dkm ]%n_", marcador);
 	}
-	public static String inputServico (String servico)
+	public static String inputServico (String servico, int km)
 	{
 		Scanner scanSv = new Scanner(System.in);
-		int km, codigo;
-		System.out.println("Qual a kilometragem?");
-		km = scanSv.nextInt();
+		int codigo;
+//		km = scanSv.nextInt();
 		System.out.printf("Qual foi o servico realizado?%n"
 				+ "0 - troca do oleo;%n"
 				+ "1 - reposicao do oleo;%n"
 				+ "2 - abastecimento;%n");
 		codigo = scanSv.nextInt();
 		servico = addServico(km, codigo);
-		showMe("Foi realizado " + servico);
-		return null;
+		showMe("Foi realizado " + servico + " aos "+ km + "km");
+		return servico;
 	}
 	public static String addServico (int km, int codigoServico)
 	{
@@ -100,46 +118,29 @@ public class hcf150 {
 		}
 		return servico;
 	}
-//	public static void servicoRealizado (int km,
-//										int kmAgora,
-//										int codigoServico,
-//										boolean feito)
-//	{
-//		String servico = "Nada a realizar";
-//		switch(codigoServico)
-//		{
-//			case 0:
-//				servico = "a troca do oleo"; break;
-//			case 1:
-//				servico = "a reposicao do oleo"; break;
-//			case 2:
-//				servico = "o abastecimento"; break;
-//		}
-//		int calculo = kmAgora - km;
-//		if(feito == true)
-//		{
-//			System.out.printf("Favor realizar %s", servico);
-//		}
-//		else
-//		{
-//			System.out.println();
-//		}
-//	}
-//	public static void alertaDeServico (int km, int kmDeAgora,String servico)
-//	{
-//		int calculo = km - kmDeAgora;
-//		int proximoServico = 0;
-//		if(servico == "a troca de oleo")
-//		{
-//			proximoServico = kmDeAgora + 500;
-//			System.out.printf("Sua proxima troca sera com %dkm%n", proximoServico);
-//			proximoServico = kmDeAgora + 250;
-//			System.out.printf("Mas podera realizar a reposicao com %dkm", proximoServico);
-//		}
-//		if(servico == "a reposicao do oleo")
-//		{
-//			proximoServico = kmDeAgora + 500;
-//			System.out.printf("Sua proxima troca sera com %dkm%n", proximoServico);
-//		}
-//	}
+	public static int addKmServico (int km)
+	{
+		return km;
+	}
+	public static int checarKm (int km, int velo, String servico, String[] servicos)
+	{
+		int calculo = km - velo;
+		int faltando = 500 - calculo;
+		String resposta = "";
+		if(servico == servicos[0])
+		{
+			resposta = servicos[1];
+		}
+		if(servico == servicos[1])
+		{
+			resposta = servicos[0];
+		}
+		if(calculo > 350)
+		{
+			showMe("Ja tem servico ai pra realizar");
+			System.out.printf("< ! >%nFaltam apenas %dkm"
+					+ " para realizar %s", faltando, resposta);
+		}
+		return km;
+	}
 }
