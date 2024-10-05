@@ -80,10 +80,10 @@ public class hcf150 {
 	{
 		System.out.printf("%n-------%n"
 				+ "Menu:%n"
-				+ "-1)inserir novo km:%n"
-				+ "-2)verificar quantos km:%n"
-				+ "-3)adicionar servico realizado:%n"
-				+ "-4)verificar ultimo servico:%n"
+				+ "-1)adicionar kilometragem:%n"
+				+ "-2)verificar velocimetro:%n"
+				+ "-3)adicionar novo servico:%n"
+				+ "-4)ultimo servico realizado:%n"
 				+ "_");
 	}
 	public static void showMarcador (int marcador)
