@@ -80,6 +80,7 @@ public class Estrutura_Sequencial {
 					(pecaQuantidade2 * pecaUnit2);
 		System.out.printf("VALOR A PAGAR: R$ %.2f", valorAPagar);
 	}
+	
 	public static void exe06() {
 		double A, B, C, result;
 		
