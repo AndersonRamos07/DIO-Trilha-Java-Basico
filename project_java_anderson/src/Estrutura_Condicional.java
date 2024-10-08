@@ -6,7 +6,8 @@ public class Estrutura_Condicional {
 		// TODO Auto-generated method stub
 //		exe01();
 //		exe02();
-		exe03();
+//		exe03();
+		exe04();
 	}
 	public static void exe01()
 	{
@@ -41,5 +42,30 @@ public class Estrutura_Condicional {
 		else
 			System.out.println("Nao sao multiplos");
 	}
-
+	public static void exe04()
+	{
+		int horaInicial, horaFinal, duracao;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		horaInicial = scan.nextInt();
+		horaFinal = scan.nextInt();
+		duracao = (horaInicial - horaFinal)*-1;
+		consoleLog(duracao);
+		if(horaInicial > horaFinal)
+		{
+			duracao = (24 - (horaInicial - horaFinal));
+			consoleLog(10000001);
+		} else if(duracao == 0 &&
+				horaInicial == 0 &&
+				horaFinal == 0)
+		{
+			duracao = 24;
+		}
+		System.out.printf("O JOGO DUROU %d HORA(S)", duracao);
+	}
+	public static void consoleLog(int var)
+	{
+		System.out.println(var);
+	}
 }
