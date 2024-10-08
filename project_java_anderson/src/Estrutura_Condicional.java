@@ -9,7 +9,8 @@ public class Estrutura_Condicional {
 //		exe03();
 //		exe04();
 //		exe05();
-		exe06();
+//		exe06();
+		exe07();
 	}
 	public static void exe01()
 	{
@@ -105,7 +106,26 @@ public class Estrutura_Condicional {
 		
 		System.out.println(intervalo);
 	}
-	
+	public static void exe07()
+	{
+		double eixoX, eixoY;
+		String coordenadas = "Origem";
+		
+		Scanner scan = new Scanner(System.in);
+		eixoX = scan.nextDouble();
+		eixoY = scan.nextDouble();
+		
+		if(eixoX > 0.0 && eixoY > 0.0)
+		{ coordenadas = "Q1";}
+		if(eixoX < 0.0 && eixoY > 0.0)
+		{ coordenadas = "Q2";}
+		if(eixoX < 0.0 && eixoY < 0.0)
+		{ coordenadas = "Q3";}
+		if(eixoX > 0.0 && eixoY < 0.0)
+		{ coordenadas = "Q4";}
+		
+		System.out.println(coordenadas);
+}
 	
 	
  	public static void consoleLog(String var)
