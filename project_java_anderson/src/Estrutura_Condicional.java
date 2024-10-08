@@ -7,7 +7,8 @@ public class Estrutura_Condicional {
 //		exe01();
 //		exe02();
 //		exe03();
-		exe04();
+//		exe04();
+		exe05();
 	}
 	public static void exe01()
 	{
@@ -51,11 +52,9 @@ public class Estrutura_Condicional {
 		horaInicial = scan.nextInt();
 		horaFinal = scan.nextInt();
 		duracao = (horaInicial - horaFinal)*-1;
-		consoleLog(duracao);
 		if(horaInicial > horaFinal)
 		{
 			duracao = (24 - (horaInicial - horaFinal));
-			consoleLog(10000001);
 		} else if(duracao == 0 &&
 				horaInicial == 0 &&
 				horaFinal == 0)
@@ -64,7 +63,32 @@ public class Estrutura_Condicional {
 		}
 		System.out.printf("O JOGO DUROU %d HORA(S)", duracao);
 	}
-	public static void consoleLog(int var)
+	public static void exe05()
+	{
+		double codigo, preco,
+			quantidade, total;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		preco = 0;
+		codigo = scan.nextDouble();
+		quantidade = scan.nextDouble();
+		
+		if(codigo == 1) preco = 4.00;
+		if(codigo == 2) preco = 4.50;
+		if(codigo == 3) preco = 5.00;
+		if(codigo == 4) preco = 2.00;
+		if(codigo == 5) preco = 1.50;
+		
+		total = quantidade * preco;
+		
+		System.out.printf("Total: R$ %.2f", total);
+	}
+
+	
+	
+	
+ 	public static void consoleLog(String var)
 	{
 		System.out.println(var);
 	}
