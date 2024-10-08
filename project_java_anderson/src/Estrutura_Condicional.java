@@ -8,7 +8,8 @@ public class Estrutura_Condicional {
 //		exe02();
 //		exe03();
 //		exe04();
-		exe05();
+//		exe05();
+		exe06();
 	}
 	public static void exe01()
 	{
@@ -84,7 +85,26 @@ public class Estrutura_Condicional {
 		
 		System.out.printf("Total: R$ %.2f", total);
 	}
-
+	public static void exe06()
+	{
+		double valor;
+		String intervalo = "Fora de intervalo";
+		
+		Scanner scan = new Scanner(System.in);
+		
+		valor = scan.nextDouble();
+		
+		if(valor > 0 && valor < 25.00 || valor == 25.00)
+			{intervalo = "Intervalo [0,25]";}
+		if(valor > 25.00 && valor < 50.00 || valor == 50.00)
+			{intervalo = "Intervalo (25,50]";}
+		if(valor > 50.00 && valor < 75.00 || valor == 50.00)
+			{intervalo = "Intervalo (50,75]";}
+		if(valor > 75.00 && valor < 100.00 || valor == 100.00)
+			{intervalo = "Intervalo (75,100]";}
+		
+		System.out.println(intervalo);
+	}
 	
 	
 	
