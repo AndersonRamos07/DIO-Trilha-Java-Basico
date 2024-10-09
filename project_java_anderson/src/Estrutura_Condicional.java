@@ -10,7 +10,8 @@ public class Estrutura_Condicional {
 //		exe04();
 //		exe05();
 //		exe06();
-		exe07();
+//		exe07();
+		exe08();
 	}
 	public static void exe01()
 	{
@@ -126,7 +127,29 @@ public class Estrutura_Condicional {
 		
 		System.out.println(coordenadas);
 }
-	
+	public static void exe08()
+	{
+		double salario, taxa;
+		String imposto = "Isento";
+		
+		Scanner scan = new Scanner(System.in);
+		
+		salario = scan.nextDouble();
+		taxa = 0;
+		
+		if(salario > 2000.01 && salario < 3000.01)
+			taxa = (salario - 2000.00)*0.08;
+		if(salario > 3000.01 && salario < 4500.00)
+			taxa = ((salario - 2000.00) - 1000.00)*0.18
+										+ (1000.00*0.08);
+		if(salario > 4500.00)
+			taxa = (salario - 4500.00)*0.28 +
+					(1500 * 0.18) + (1000.00*0.08);
+		if(taxa == 0.0)
+			System.out.print(imposto);
+		else
+			System.out.printf("%.2f",taxa);
+	}
 	
  	public static void consoleLog(String var)
 	{
