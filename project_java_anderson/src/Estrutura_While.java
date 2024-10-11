@@ -5,7 +5,8 @@ public class Estrutura_While {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		exe01();
-		exe02();
+//		exe02();
+		exe03();
 
 	}
 	public static void exe01()
@@ -49,5 +50,37 @@ public class Estrutura_While {
 			System.out.println(coordenada);
 		}
 		scan.close();
+	}
+	public static void exe03()
+	{
+		int codigo = 0;
+		int alcool = 0;
+		int gasolina = 0;
+		int diesel = 0;
+		String preferencia = "";
+		
+		Scanner scan = new Scanner(System.in);
+		
+		codigo = scan.nextInt();
+
+		while(codigo < 4 || codigo > 0 && codigo != 4)
+		{
+			codigo = scan.nextInt();
+			if(codigo == 1)
+				alcool += 1;
+			if(codigo == 2)
+				gasolina += 1;
+			if(codigo == 3)
+				diesel += 1;
+		}
+		if(codigo == 4)
+		{
+			preferencia = "MUITO OBRIGADO"
+					+ "\nAlcool: "+ alcool
+					+ "\nGasolina: "+ gasolina
+					+ "\nDiesel: "+ diesel;
+		}
+		System.out.println(preferencia);
+		
 	}
 }
