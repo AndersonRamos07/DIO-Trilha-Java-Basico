@@ -78,27 +78,44 @@ public class hcf150 {
 	}
 	public static void showMenu()
 	{
-		System.out.printf("%n-------%n"
-				+ "Menu:%n"
-				+ "-1)adicionar kilometragem:%n"
-				+ "-2)verificar velocimetro:%n"
-				+ "-3)adicionar novo servico:%n"
-				+ "-4)ultimo servico realizado:%n"
-				+ "_");
+		System.out.println("\n------------------------------"
+				+ "\n	MENU			|"
+				+ "\n------------------------------"
+				+ "\n-1)adicionar kilometragem:	|"
+				+ "\n-2)verificar velocimetro:	|"
+				+ "\n-3)adicionar novo servico:	|"
+				+ "\n-4)ultimo servico realizado:	|"
+				+ "\n------------------------------"
+				+ "\n_");
 	}
 	public static void showMarcador (int marcador)
 	{
-		System.out.printf("[ Velocimetro em: %dkm ]%n_", marcador);
+		String convertInt = Integer.toString(marcador);
+		if(convertInt.length() < 6)
+		{
+			int max = 6 - convertInt.length();
+			for(int i = 0; i < max; i++)
+				convertInt = "0"+convertInt;
+		}
+		char numbers[] = convertInt.toCharArray();
+		System.out.println("\n------------------------------"
+				+ "\n	VELOCIMETRO		|"
+				+ "\n------------------------------\n"
+				+"( | "+numbers[0]+" "
+				+"| "+numbers[1]+" "
+				+"| "+numbers[2]+" "
+				+"| "+numbers[3]+" "
+				+"| "+numbers[4]+" "
+				+"[ "+numbers[5]+" ] )");
 	}
 	public static String inputServico (String servico, int km)
 	{
 		Scanner scanSv = new Scanner(System.in);
 		int codigo;
-//		km = scanSv.nextInt();
-		System.out.printf("Qual foi o servico realizado?%n"
-				+ "0 - troca do oleo;%n"
-				+ "1 - reposicao do oleo;%n"
-				+ "2 - abastecimento;%n");
+		System.out.println("Qual foi o servico realizado?"
+				+ "\n0 - troca do oleo;"
+				+ "\n1 - reposicao do oleo;"
+				+ "\n2 - abastecimento;");
 		codigo = scanSv.nextInt();
 		servico = addServico(km, codigo);
 		showMe("Foi realizado " + servico + " aos "+ km + "km");
