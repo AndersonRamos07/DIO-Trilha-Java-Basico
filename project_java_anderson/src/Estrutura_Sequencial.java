@@ -89,7 +89,7 @@ public class Estrutura_Sequencial {
 		B = scan.nextDouble();
 		C = scan.nextDouble();
 		scan.close();
-		result = (Math.pow(A, 2)*(Math.pow(C, 2))/2);
+		result = (A*C)/2;
 		System.out.printf("TRIANGULO: %.3f%n", result);
 		result = 3.14159 * Math.pow(C, 2);
 		System.out.printf("CIRCULO: %.3f%n", result);
