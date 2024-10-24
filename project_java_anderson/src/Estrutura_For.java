@@ -5,8 +5,8 @@ public class Estrutura_For {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		exe01();
-		exe02();
-//		exe03();
+//		exe02();
+		exe03();
 //		exe04();
 //		exe05();
 //		exe06();
@@ -28,9 +28,11 @@ public class Estrutura_For {
 	{
 		int quantidade, numInOut;
 		int nIm = 0;
-		int nOut =0;		
+		int nOut =0;
+		
 		Scanner scan = new Scanner(System.in);		
 		quantidade = scan.nextInt();
+		
 		for(int i = 0; i < quantidade; i++)
 		{
 			numInOut = scan.nextInt();
@@ -44,7 +46,27 @@ public class Estrutura_For {
 	}
 	public static void exe03()
 	{
+		int inteiroN;
+		double denominador, calculo, soma;
 		
+		Scanner scan = new Scanner(System.in);
+		inteiroN = scan.nextInt();
+		denominador = 0; calculo = 0; soma = 0;
+		
+		for(int j = 0; j < inteiroN; j++)
+		{
+			for(int i = 0; i < inteiroN; i++) {
+				denominador = scan.nextDouble();
+				if(i == 0) denominador = denominador*2;
+				if(i == 1) denominador = denominador*3;
+				if(i == 2) denominador = denominador*5;
+				soma += denominador;
+			}
+			calculo = soma / 10;
+			System.out.printf("%.1f%n", calculo);
+			soma = 0;
+		}
+		scan.close();
 	}
 	public static void exe04()
 	{
