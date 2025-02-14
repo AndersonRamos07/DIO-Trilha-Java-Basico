@@ -1,3 +1,4 @@
+package curso_Basico_udemy;
 import java.util.Scanner;
 
 public class Estrutura_While {
