@@ -8,15 +8,12 @@ public class ContaBancaria {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insira um saldo inicial para sua conta:");
         double saldoInicial = scanner.nextDouble();
-        //scanner.close();
         
         int opcao;
         boolean executando = true;
         
         Conta novaConta = new Conta(saldoInicial);
-        //Scanner scan = new Scanner(System.in);
         do{
-            //scanner = new Scanner(System.in);
             showMenu();
             opcao = scanner.nextInt();
             switch (opcao) {
@@ -81,7 +78,6 @@ public class ContaBancaria {
             System.out.println("Modalidade: "+pModalidade);
             System.out.println("Qual seria o valor? R$");
             double valor = scan.nextDouble();
-            //scan.close();
             return valor;
         }
     }
@@ -97,6 +93,7 @@ public class ContaBancaria {
     */
     
     //trash
+    /*
     /*
     Conta minha = new Conta(saldoInicial);
     
@@ -116,7 +113,7 @@ public class ContaBancaria {
     minha.getChequeEspecial(0);
     minha.getSaldoTotal();
     minha.getChequeEspecial(1);
-    */
+    -/-
     // System.out.println("---MENU---\n"+
     //     "1) Consultar saldo: \n"+   //getSaldo()
     //     "2) consultar cheque especial: \n"+ //getChequeEspecial()
@@ -134,3 +131,4 @@ public class ContaBancaria {
     //public static void selecionarOpcao (int pOpcao, Conta pNovaConta){}
     //selecionarOpcao(opcao, novaConta);
     //hiddenMenu();
+    */
