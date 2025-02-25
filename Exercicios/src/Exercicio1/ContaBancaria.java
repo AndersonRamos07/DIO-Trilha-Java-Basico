@@ -8,14 +8,17 @@ public class ContaBancaria {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insira um saldo inicial para sua conta:");
         double saldoInicial = scanner.nextDouble();
-        scanner.close();
+        //scanner.close();
         
-        int opcao = 10;
+        int opcao;
+        boolean executando = true;
         
         Conta novaConta = new Conta(saldoInicial);
-        Scanner scan = new Scanner(System.in);
+        //Scanner scan = new Scanner(System.in);
         do{
-            opcao = Integer.parseInt(scan.nextLine());
+            //scanner = new Scanner(System.in);
+            showMenu();
+            opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
                     novaConta.getSaldo();
@@ -39,21 +42,17 @@ public class ContaBancaria {
                     novaConta.getChequeEspecial(1);
                     break;
                 case 7:
-                    opcao = hiddenMenu();
+                    executando = hiddenMenu();
                     break;
-            
-                default:
-                    //showMenu();
-                    break;
+                // default:
+                //     showMenu();
+                //     break;
             }
-            //selecionarOpcao(opcao, novaConta);
-            showMenu();
-        }while(opcao != 0);
-        //hiddenMenu();
-        scan.close();
+        }while(executando);
+        scanner.close();
         
-        }
-        public static void showMenu()
+    }
+    public static void showMenu()
         {
             System.out.println("\n------------------------------"
             + "\n	      MENU   		|"
@@ -70,13 +69,11 @@ public class ContaBancaria {
             + "\n_");
         }
         
-        public static int hiddenMenu()
+        public static boolean hiddenMenu()
         {
             System.out.println("---OBRIGADO POR UTILIZAR NOSSOS SERVICOS---");
-            return 0;
+            return false;
         };
-    
-        //public static void selecionarOpcao (int pOpcao, Conta pNovaConta){}
         
         public static double getValor (String pModalidade)
         {
@@ -84,52 +81,56 @@ public class ContaBancaria {
             System.out.println("Modalidade: "+pModalidade);
             System.out.println("Qual seria o valor? R$");
             double valor = scan.nextDouble();
-            scan.close();
+            //scan.close();
             return valor;
         }
     }
-        
-        //todo
-        /*
-        *  - Consultar saldo
-        - consultar cheque especial
-        - Depositar dinheiro;
-        - Sacar dinheiro;
-        - Pagar um boleto.
-        - Verificar se a conta está usando cheque especial.
-        */
-        
-        //trash
-        /*
-        Conta minha = new Conta(saldoInicial);
     
-        minha.depositar(250.00);
-        minha.sacar(75.00, "");
-        minha.getSaldo();
-        minha.getChequeEspecial(1);
-        minha.getSaldoTotal();
-        minha.pagarBoleto(35.00);
-        minha.getSaldoTotal();
-        minha.sacar(25.00, "");
-        minha.sacar(120.00, "");
-        minha.getSaldo();
-        minha.sacar(600.00, "");
-        minha.getSaldo();
-        minha.getTaxasCobradas();
-        minha.getChequeEspecial(0);
-        minha.getSaldoTotal();
-        minha.getChequeEspecial(1);
-        */
-        // System.out.println("---MENU---\n"+
-        //     "1) Consultar saldo: \n"+   //getSaldo()
-        //     "2) consultar cheque especial: \n"+ //getChequeEspecial()
-        //     "3) Depositar dinheiro: \n"+    //depositar()
-        //     "4) Sacar dinheiro: \n"+    //sacar()
-        //     "5) Pagar um boleto: \n"+   //pagarBoleto()
-        //     "6) Verificar se a conta está usando cheque especial:\n"+   //getChequeEspecial(1)
-        //     "ou 7) para sair.");
-        // System.out.println("Escolha uma das opcoes:");
-        // resposta = terminal.nextInt();
-        // selecionarOpcao(resposta, pConta);
-        // terminal.close();
-   // }
+    //todo
+    /*
+    *  - Consultar saldo
+    - consultar cheque especial
+    - Depositar dinheiro;
+    - Sacar dinheiro;
+    - Pagar um boleto.
+    - Verificar se a conta está usando cheque especial.
+    */
+    
+    //trash
+    /*
+    Conta minha = new Conta(saldoInicial);
+    
+    minha.depositar(250.00);
+    minha.sacar(75.00, "");
+    minha.getSaldo();
+    minha.getChequeEspecial(1);
+    minha.getSaldoTotal();
+    minha.pagarBoleto(35.00);
+    minha.getSaldoTotal();
+    minha.sacar(25.00, "");
+    minha.sacar(120.00, "");
+    minha.getSaldo();
+    minha.sacar(600.00, "");
+    minha.getSaldo();
+    minha.getTaxasCobradas();
+    minha.getChequeEspecial(0);
+    minha.getSaldoTotal();
+    minha.getChequeEspecial(1);
+    */
+    // System.out.println("---MENU---\n"+
+    //     "1) Consultar saldo: \n"+   //getSaldo()
+    //     "2) consultar cheque especial: \n"+ //getChequeEspecial()
+    //     "3) Depositar dinheiro: \n"+    //depositar()
+    //     "4) Sacar dinheiro: \n"+    //sacar()
+    //     "5) Pagar um boleto: \n"+   //pagarBoleto()
+    //     "6) Verificar se a conta está usando cheque especial:\n"+   //getChequeEspecial(1)
+    //     "ou 7) para sair.");
+    // System.out.println("Escolha uma das opcoes:");
+    // resposta = terminal.nextInt();
+    // selecionarOpcao(resposta, pConta);
+    // terminal.close();
+    // }
+    
+    //public static void selecionarOpcao (int pOpcao, Conta pNovaConta){}
+    //selecionarOpcao(opcao, novaConta);
+    //hiddenMenu();

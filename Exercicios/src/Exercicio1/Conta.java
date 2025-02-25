@@ -67,9 +67,9 @@ public class Conta {
      if(resposta)
      {
           if(pObservacao != "")
-          System.out.println("Foi realizado o saque no valor de: R$"+String.format("%.2f",pValor));
-          else
           System.out.println("Foi realizado o pagamento no valor de: R$"+String.format("%.2f",pValor));
+          else
+          System.out.println("Foi realizado o saque no valor de: R$"+String.format("%.2f",pValor));
      } else{
           System.out.println("Operacao nao realizada.");
      }
