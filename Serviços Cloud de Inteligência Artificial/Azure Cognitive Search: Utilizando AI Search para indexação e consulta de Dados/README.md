@@ -1,3 +1,5 @@
+###  Lab Project - Azure AI Search index (UI)
+
 ### 🔍 Laboratório: Usando o Azure para Fazer Buscas Inteligentes
 ## 🧠 O que é isso?
 Você vai aprender como usar uma ferramenta da Microsoft que transforma arquivos de texto (como avaliações de clientes) em algo que pode ser pesquisado facilmente, como se fosse o Google dentro da sua empresa.
